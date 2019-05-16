@@ -170,10 +170,8 @@ extension ViewController: UISearchResultsUpdating, UISearchBarDelegate{
          We treat the filtering process the same as fetching data from a webservice call.
          */
         DispatchQueue.global(qos: .default).async {
-            print("Called global")
             self.filterArray = self.dataArray.filter({$0.name.lowercased().hasPrefix(searchString.lowercased())})
             DispatchQueue.main.async {
-                print("Called main")
                 self.tableView.reloadData()
             }
             

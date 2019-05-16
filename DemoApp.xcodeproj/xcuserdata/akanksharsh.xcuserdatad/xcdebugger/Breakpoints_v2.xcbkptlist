@@ -211,53 +211,5 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DemoApp/ViewController.swift"
-            timestampString = "579676387.62521"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "174"
-            endingLineNumber = "174"
-            landmarkName = "filterSearchController(searchString:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in DemoApp.ViewController.filterSearchController(searchString: Swift.String) -&gt; ()"
-                  moduleName = "DemoApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/akanksharsh/Documents/Development/New%20Projects/DemoApp/DemoApp/ViewController.swift"
-                  timestampString = "579639243.705005"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "178"
-                  endingLineNumber = "178"
-                  offsetFromSymbolStart = "196">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (DemoApp.DataFile) -&gt; Swift.Bool in closure #1 () -&gt; () in DemoApp.ViewController.filterSearchController(searchString: Swift.String) -&gt; ()"
-                  moduleName = "DemoApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/akanksharsh/Documents/Development/New%20Projects/DemoApp/DemoApp/ViewController.swift"
-                  timestampString = "579639243.709143"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "178"
-                  endingLineNumber = "178"
-                  offsetFromSymbolStart = "40">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
