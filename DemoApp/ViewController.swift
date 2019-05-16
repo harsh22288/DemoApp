@@ -143,12 +143,7 @@ extension ViewController:  UITableViewDataSource, UITableViewDelegate  {
             
         }
         return cell
-
-
-        
-        
-        
-        
+       
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -163,21 +158,27 @@ extension ViewController:  UITableViewDataSource, UITableViewDelegate  {
 extension ViewController: UISearchResultsUpdating, UISearchBarDelegate{
     
     func updateSearchResults(for searchController: UISearchController) {
-        filterSearchController(searchBar: searchController.searchBar.text!)
+        filterSearchController(searchString: searchController.searchBar.text!)
     }
     
-    func filterSearchController(searchBar: String){
+    func filterSearchController(searchString: String){
         
-        // get the searchText
-        // use Swift’s higher order filter to filter through our dataList.
-        // Ensure the name of the pokemon contains the entered string. If the searchText is empty, we should display all of them. If we did not add this second conditional, we would see nothing whenever the searchBar is empty!
+        /* The previous code had the searching feature and filtering the data on the main thread resulting in a laggy UI execution of entering search text and filtering of data in the table
+         Corrective action taken is to free up the main thread and therefore a more responsive search bar implementation along with the filtering of data in tableview is being carried out
+         A concurrent thread performing an asynchronous task of filtering the data of the array based on the search parameters is carried out on this thread.
+         The concurrent thread filters the data and the main thread updates the UI depending on the filter array
+         We treat the filtering process the same as fetching data from a webservice call.
+         */
+        DispatchQueue.global(qos: .default).async {
+            print("Called global")
+            self.filterArray = self.dataArray.filter({$0.name.lowercased().hasPrefix(searchString.lowercased())})
+            DispatchQueue.main.async {
+                print("Called main")
+                self.tableView.reloadData()
+            }
+            
+        }
         
-        let text = searchBar
-        filterArray = dataArray.filter({ (dataObject) -> Bool in
-            let isMatchingText = dataObject.name.lowercased().contains(text.lowercased()) || text.lowercased().count == 0
-            return isMatchingText
-        })
-        tableView.reloadData()
     }
 }
 

@@ -46,13 +46,13 @@ class DemoAppTests: XCTestCase {
         
         XCTAssert(true)
         let text = "Republic"
-        vc.filterSearchController(searchBar: text)
+        vc.filterSearchController(searchString: text)
         XCTAssert(vc.filterArray.count > 0)
     }
     
     func testfindSearchWrong() {  // bound to fail
         let text = "Harsh"
-        vc.filterSearchController(searchBar: text)
+        vc.filterSearchController(searchString: text)
         XCTAssert(vc.filterArray.count > 0)
     }
     
